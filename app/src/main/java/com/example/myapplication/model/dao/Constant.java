@@ -6,6 +6,8 @@ public class Constant {
     public final static String GET = BASE_URL+"get";
     public final static String GETUSER = BASE_URL+"getUser";
     public final static String GETALLFILM = "http://10.0.2.2:8080/movies/allMovies";
+    public final static String GETALLCINEMA = "http://10.0.2.2:8080/";
+
     public final static String GETALL = BASE_URL+"getAll";
     public final static String DELETE = BASE_URL+"delete";
     public final static String MODIFY = BASE_URL+"modify";

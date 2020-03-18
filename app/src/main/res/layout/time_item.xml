@@ -5,47 +5,41 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:padding="15dp">
-    <ImageView
-        android:id="@+id/iv"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/picture_of_film" />
+
     <LinearLayout
         android:id="@+id/message"
-        android:layout_width="540px"
+        android:layout_width="800px"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_toRightOf="@id/iv"
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/Price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:textColor="#000000"
-            android:text="Title" />
+            android:text="Price" />
 
         <TextView
-            android:id="@+id/lead_actors"
+            android:id="@+id/screen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#363636"
-            android:text="Lead actors"/>
+            android:text="screen"/>
 
         <TextView
-            android:id="@+id/director"
+            android:id="@+id/start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#363636"
-            android:text="Director"/>
+            android:text="Start time"/>
         <TextView
-            android:id="@+id/duration"
+            android:id="@+id/end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#363636"
-            android:text="Duration"/>
+            android:text="End time"/>
     </LinearLayout>
 
     <Button
@@ -56,6 +50,7 @@
         android:background="@drawable/buyticket"
         android:width="60dp"
         android:height="30dp"
+        android:layout_marginTop="17dp"
         android:text="@string/buy_ticket" />
 
 

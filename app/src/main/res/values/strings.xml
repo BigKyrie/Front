@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">jesus</string>
     <string name="buy_ticket">buy ticket</string>
+    <string name="select_time">select time</string>
     <string name="picture_of_film">Picture Of Film</string>
+    <string name="buy_now">buy now</string>
 </resources>

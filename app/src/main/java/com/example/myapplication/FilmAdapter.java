@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +41,7 @@ public class FilmAdapter extends BaseAdapter {
         return position;
     }
 
-    @SuppressLint({"ViewHolder", "SetTextI18n"})
+    @SuppressLint("ViewHolder")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item,parent,false);
@@ -48,13 +50,28 @@ public class FilmAdapter extends BaseAdapter {
         TextView title = (TextView) convertView.findViewById(R.id.title);
         TextView duration = (TextView) convertView.findViewById(R.id.duration);
         TextView director = (TextView) convertView.findViewById(R.id.director);
-        Button but_ticket = (Button) convertView.findViewById(R.id.buy_ticket);
+        Button buy_ticket = (Button) convertView.findViewById(R.id.buy_ticket);
 
-        title.setText("title: "+mData.get(position).getTitle());
-        lead_actor.setText("lead actor: "+mData.get(position).getLead_actors());
-        duration.setText("duration: "+mData.get(position).getDuration().toString());
-        director.setText("director: "+mData.get(position).getDirector());
+        title.setText("Title:《"+mData.get(position).getTitle()+"》");
+        lead_actor.setText("Lead actor: "+mData.get(position).getLead_actors());
+        duration.setText("Duration: "+mData.get(position).getDuration().toString());
+        director.setText("Director: "+mData.get(position).getDirector());
+
+        buy_ticket.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(mContext,CinemaListActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("id",mData.get(position).getId().toString());
+                intent.putExtras(bundle);
+                mContext.startActivity(intent);
+            }
+        });
 
         return convertView;
     }
+
 }
