@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">jesus</string>
+    <string name="buy_ticket">buy ticket</string>
+    <string name="picture_of_film">Picture Of Film</string>
 </resources>

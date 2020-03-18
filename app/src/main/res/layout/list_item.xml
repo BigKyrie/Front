@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="15dp">
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/picture_of_film" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title"/>
+        <TextView
+            android:id="@+id/lead_actors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lead_actors"/>
+        <TextView
+            android:id="@+id/director"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="director"/>
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="duration"/>
+
+        <Button
+            android:id="@+id/buy_ticket"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:width="60dp"
+            android:height="30dp"
+            android:text="@string/buy_ticket" />
+    </LinearLayout>
+
+</LinearLayout>
