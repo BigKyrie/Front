@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.example.myapplication.model.dao.Constant;
 import com.example.myapplication.model.entity.Cinema;
 import com.example.myapplication.model.entity.Movie;
+import com.example.myapplication.model.entity.Screening;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -26,31 +27,32 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class CinemaListActivity extends AppCompatActivity {
-
-    private static final String TAG = "cinema";
-    private ListView Cinema;
-    private List<Cinema> mData = new ArrayList<>();
-    ;
-    private Context mContext = CinemaListActivity.this;
-    private CinemaAdapter mAdapter = null;
-
+public class ScreeningListActivity extends AppCompatActivity {
+    private static final String TAG = "Screeninglist";
+    private List<Screening> mData = new ArrayList<>();;
+    private Context mContext;
+    //private FilmAdapter mAdapter = null;
+    //private ListView listview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cinema_list);
-        Cinema = findViewById(R.id.cinemalist);
+        setContentView(R.layout.activity_screening_list);
+
+        mContext = ScreeningListActivity.this;
 
         Bundle bundle = getIntent().getExtras();
-        String id = bundle.getString("id");
-        Toast.makeText(CinemaListActivity.this, id, Toast.LENGTH_SHORT).show();
+        String Movie_id = bundle.getString("Movie_id");
+        String Cinema_id = bundle.getString("Cinema_id");
+        Toast.makeText(ScreeningListActivity.this, Movie_id+" "+Cinema_id, Toast.LENGTH_SHORT).show();
 
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(Constant.GETALLCINEMA + id)
+                .url(Constant.GETALLSCREENING+Movie_id+"/"+Cinema_id)
                 .build();
+        Toast.makeText(ScreeningListActivity.this, Constant.GETALLSCREENING+Movie_id+"/"+Cinema_id, Toast.LENGTH_SHORT).show();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
+
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 final String data = response.body().string();
@@ -58,13 +60,13 @@ public class CinemaListActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mData = JSONArray.parseArray(data, Cinema.class);
+                        mData = JSONArray.parseArray(data, Screening.class);
                         if(mData.size() == 0)
                         {
-                            Toast.makeText(CinemaListActivity.this,"0",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ScreeningListActivity.this,"no object",Toast.LENGTH_SHORT).show();
                         }else {
-                            mAdapter = new CinemaAdapter(mData, mContext, id);
-                            Cinema.setAdapter(mAdapter);
+                            Toast.makeText(ScreeningListActivity.this,mData.get(0).toString(),Toast.LENGTH_SHORT).show();
+                            Log.d(TAG, "get 1: "+mData.get(0).getMovie().getTitle());
                         }
 
                     }
@@ -74,7 +76,7 @@ public class CinemaListActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 Looper.prepare();
-                Toast.makeText(CinemaListActivity.this, "Server not responding", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ScreeningListActivity.this, "Server not responding", Toast.LENGTH_SHORT).show();
                 Looper.loop();
             }
         });

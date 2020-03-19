@@ -16,17 +16,18 @@ import com.example.myapplication.model.entity.Cinema;
 import java.util.List;
 
 public class CinemaAdapter extends BaseAdapter {
-
     private List<Cinema> mData;
     private Context mContext;
-    public CinemaAdapter(List<Cinema> mData, Context mContext) {
+    private String Movie_id;
+    public CinemaAdapter(List<Cinema> mData, Context mContext, String Movie_id) {
         this.mData = mData;
         this.mContext = mContext;
+        this.Movie_id = Movie_id;
     }
 
     @Override
     public int getCount() {
-        return 10;
+        return mData.size();
     }
 
     @Override
@@ -49,25 +50,24 @@ public class CinemaAdapter extends BaseAdapter {
         TextView location = (TextView) convertView.findViewById(R.id.location);
         Button select = (Button) convertView.findViewById(R.id.SelectTime);
 
-//        cinema_name.setText("Title:《"+mData.get(position).getTitle()+"》");
-//        wifi.setText("Lead actor: "+mData.get(position).getLead_actors());
-//        glass.setText("Duration: "+mData.get(position).getDuration().toString());
-//        location.setText("Director: "+mData.get(position).getDirector());
-
+        cinema_name.setText("Title:"+mData.get(position).getTitle());
+        wifi.setText("Lead actor: "+mData.get(position).isWifi());
+        glass.setText("Duration: "+mData.get(position).isThree_D_glasses());
+        location.setText("Director: "+mData.get(position).getLocation());
         select.setOnClickListener(new View.OnClickListener()
         {
 
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(mContext,TimeActivity.class);
+                Intent intent = new Intent(mContext,ScreeningListActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("id",mData.get(position).getId().toString());
+                bundle.putString("Movie_id",Movie_id);
+                bundle.putString("Cinema_id",mData.get(position).getId().toString());
                 intent.putExtras(bundle);
                 mContext.startActivity(intent);
             }
         });
-
         return convertView;
     }
 }

@@ -32,7 +32,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class FilmListActivity extends AppCompatActivity {
-    private static final String TAG = "demo";
+    private static final String TAG = "filmlist";
     private List<Movie> mData = new ArrayList<>();;
     private Context mContext;
     private FilmAdapter mAdapter = null;
