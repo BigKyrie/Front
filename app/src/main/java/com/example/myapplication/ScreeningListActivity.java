@@ -31,12 +31,13 @@ public class ScreeningListActivity extends AppCompatActivity {
     private static final String TAG = "Screeninglist";
     private List<Screening> mData = new ArrayList<>();;
     private Context mContext;
-    //private FilmAdapter mAdapter = null;
-    //private ListView listview;
+    private ScreeningAdapter mAdapter = null;
+    private ListView screeninglist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screening_list);
+        screeninglist = findViewById(R.id.screeninglist);
 
         mContext = ScreeningListActivity.this;
 
@@ -65,6 +66,8 @@ public class ScreeningListActivity extends AppCompatActivity {
                         {
                             Toast.makeText(ScreeningListActivity.this,"no object",Toast.LENGTH_SHORT).show();
                         }else {
+                            mAdapter = new ScreeningAdapter(mData, mContext, Movie_id);
+                            screeninglist.setAdapter(mAdapter);
                             Toast.makeText(ScreeningListActivity.this,mData.get(0).toString(),Toast.LENGTH_SHORT).show();
                             Log.d(TAG, "get 1: "+mData.get(0).getMovie().getTitle());
                         }

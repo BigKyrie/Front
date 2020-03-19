@@ -8,7 +8,7 @@ public class Movie {
     private String blurb;
     private String certificate;
     private String director;
-    private String lead_actors;
+    private String actors;
     private Date showtime;
     private Integer duration;
     private String type;
@@ -23,7 +23,7 @@ public class Movie {
         this.blurb = blurb;
         this.certificate = certificate;
         this.director = director;
-        this.lead_actors = lead_actors;
+        this.actors = lead_actors;
         this.showtime = showtime;
         this.duration = duration;
         this.type = type;
@@ -70,12 +70,12 @@ public class Movie {
         this.director = director;
     }
 
-    public String getLead_actors() {
-        return lead_actors;
+    public String getActors() {
+        return actors;
     }
 
-    public void setLead_actors(String lead_actor) {
-        this.lead_actors = lead_actors;
+    public void setActors(String actors) {
+        this.actors = actors;
     }
 
     public Date getShowtime() {

@@ -6,18 +6,20 @@ public class Screening {
     private Integer id;
     private Date start_time;
     private Date end_time;
+    private Float price;
 
     private Screen screen;
     private Movie movie;
     public Screening() {
 
     }
-    public Screening(Integer id, Date start_time, Date end_time, Screen screen, Movie movie) {
+    public Screening(Integer id, Date start_time, Date end_time, Screen screen, Movie movie, Float price) {
         this.id = id;
         this.start_time = start_time;
         this.end_time = end_time;
         this.screen = screen;
         this.movie = movie;
+        this.price = price;
     }
 
     public Integer getId() {
@@ -58,5 +60,13 @@ public class Screening {
 
     public void setMovie(Movie movie) {
         this.movie = movie;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
     }
 }

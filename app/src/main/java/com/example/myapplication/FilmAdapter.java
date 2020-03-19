@@ -53,7 +53,7 @@ public class FilmAdapter extends BaseAdapter {
         Button buy_ticket = (Button) convertView.findViewById(R.id.buy_ticket);
 
         title.setText("Title:《"+mData.get(position).getTitle()+"》");
-        lead_actor.setText("Lead actor: "+mData.get(position).getLead_actors());
+        lead_actor.setText("Lead actor: "+mData.get(position).getActors());
         duration.setText("Duration: "+mData.get(position).getDuration().toString());
         director.setText("Director: "+mData.get(position).getDirector());
 

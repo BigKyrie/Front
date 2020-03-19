@@ -50,10 +50,10 @@ public class CinemaAdapter extends BaseAdapter {
         TextView location = (TextView) convertView.findViewById(R.id.location);
         Button select = (Button) convertView.findViewById(R.id.SelectTime);
 
-        cinema_name.setText("Title:"+mData.get(position).getTitle());
-        wifi.setText("Lead actor: "+mData.get(position).isWifi());
-        glass.setText("Duration: "+mData.get(position).isThree_D_glasses());
-        location.setText("Director: "+mData.get(position).getLocation());
+        cinema_name.setText(mData.get(position).getTitle());
+        wifi.setText("Wifi: "+mData.get(position).isWifi());
+        glass.setText("3D glass: "+mData.get(position).isThree_D_glasses());
+        location.setText("Location: "+mData.get(position).getLocation());
         select.setOnClickListener(new View.OnClickListener()
         {
 
