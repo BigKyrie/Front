@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.model.entity.Movie;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class FilmAdapter extends BaseAdapter {
@@ -56,6 +56,7 @@ public class FilmAdapter extends BaseAdapter {
         lead_actor.setText("Lead actor: "+mData.get(position).getActors());
         duration.setText("Duration: "+mData.get(position).getDuration().toString());
         director.setText("Director: "+mData.get(position).getDirector());
+        Glide.with(mContext).load(mData.get(position).getUrl()).into(img_icon);
 
         buy_ticket.setOnClickListener(new View.OnClickListener()
         {

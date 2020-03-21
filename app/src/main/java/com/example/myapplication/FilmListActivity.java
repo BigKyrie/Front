@@ -63,20 +63,10 @@ public class FilmListActivity extends AppCompatActivity {
                         mData = JSONArray.parseArray(data,Movie.class);
                         mAdapter = new FilmAdapter(mData, mContext);
                         listview.setAdapter(mAdapter);
-                        Toast.makeText(FilmListActivity.this, "Lead actor: "+mData.get(0).getActors(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FilmListActivity.this, "Lead actor: "+mData.get(0).getUrl(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
-//                Looper.prepare();
-//                if(mData.size() == 1)
-//                {
-//                    Toast.makeText(FilmListActivity.this,"1",Toast.LENGTH_SHORT).show();
-//                }
-//                if(mData.size() == 0)
-//                {
-//                    Toast.makeText(FilmListActivity.this,"0",Toast.LENGTH_SHORT).show();
-//                }
-//                Looper.loop();
             }
 
             @Override

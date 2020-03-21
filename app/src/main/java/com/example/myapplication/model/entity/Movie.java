@@ -13,11 +13,12 @@ public class Movie {
     private Integer duration;
     private String type;
     private String language;
+    private String url;
 
     public Movie (){
 
     }
-    public Movie(Integer id, String title, String blurb, String certificate, String director, String lead_actors, Date showtime, Integer duration, String type, String language) {
+    public Movie(Integer id, String title, String blurb, String certificate, String director, String lead_actors, Date showtime, Integer duration, String type, String language, String url) {
         this.id = id;
         this.title = title;
         this.blurb = blurb;
@@ -28,6 +29,7 @@ public class Movie {
         this.duration = duration;
         this.type = type;
         this.language = language;
+        this.url = url;
     }
 
     public Integer getId() {
@@ -108,6 +110,14 @@ public class Movie {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
 
