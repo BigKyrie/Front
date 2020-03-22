@@ -13,7 +13,7 @@
         android:contentDescription="@string/picture_of_film" />
     <LinearLayout
         android:id="@+id/message"
-        android:layout_width="540px"
+        android:layout_width="220dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_toRightOf="@id/iv"
