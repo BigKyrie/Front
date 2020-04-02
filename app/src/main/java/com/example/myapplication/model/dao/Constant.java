@@ -8,6 +8,7 @@ public class Constant {
     public final static String GETALLFILM = "http://10.0.2.2:8080/movies/allMovies";
     public final static String GETALLCINEMA = "http://10.0.2.2:8080/cinema/";
     public final static String GETALLSCREENING = "http://10.0.2.2:8080/screenings/";
+    public final static String GETSEATINFO = "http://10.0.2.2:8080/seat/getSeats/";
     public final static String GETALL = BASE_URL+"getAll";
     public final static String DELETE = BASE_URL+"delete";
     public final static String MODIFY = BASE_URL+"modify";

@@ -58,6 +58,20 @@ public class ScreeningAdapter extends BaseAdapter {
         start.setText("Start time: "+mData.get(position).getStart_time());
         end.setText("End time: "+mData.get(position).getEnd_time());
 
+        buy.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(mContext,SeatInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Screening_id",mData.get(position).getId().toString());
+                intent.putExtras(bundle);
+                mContext.startActivity(intent);
+            }
+        });
+
         return convertView;
     }
 }

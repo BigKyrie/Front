@@ -29,7 +29,7 @@ import okhttp3.Response;
 
 public class ScreeningListActivity extends AppCompatActivity {
     private static final String TAG = "Screeninglist";
-    private List<Screening> mData = new ArrayList<>();;
+    private List<Screening> mData = new ArrayList<>();
     private Context mContext;
     private ScreeningAdapter mAdapter = null;
     private ListView screeninglist;
