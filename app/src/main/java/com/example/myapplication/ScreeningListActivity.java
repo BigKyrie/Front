@@ -68,7 +68,7 @@ public class ScreeningListActivity extends AppCompatActivity {
                         }else {
                             mAdapter = new ScreeningAdapter(mData, mContext, Movie_id);
                             screeninglist.setAdapter(mAdapter);
-                            Toast.makeText(ScreeningListActivity.this,mData.get(0).toString(),Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(ScreeningListActivity.this,mData.get(0).toString(),Toast.LENGTH_SHORT).show();
                             Log.d(TAG, "get 1: "+mData.get(0).getMovie().getTitle());
                         }
 

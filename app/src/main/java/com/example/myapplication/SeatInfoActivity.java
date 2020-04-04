@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
@@ -88,30 +89,6 @@ public class SeatInfoActivity extends AppCompatActivity
             }
         });
 
-
-
-
-
-
-        mGv.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
-            {
-                final String[] array3 = new String[]{"成年票","老人票", "儿童票"};
-                AlertDialog.Builder builder3 = new AlertDialog.Builder(SeatInfoActivity.this);
-                builder3.setTitle("请选择票种类").setSingleChoiceItems(array3, 0, new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i)
-                    {
-                        ToastUtil.showMsg(SeatInfoActivity.this, array3[i]);
-                        dialogInterface.dismiss();
-                    }
-                }).setCancelable(false).show();
-                Toast.makeText(SeatInfoActivity.this, "您点击了第" + i + "张图片.", Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 }

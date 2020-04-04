@@ -43,7 +43,7 @@ public class CinemaListActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String id = bundle.getString("id");
-        Toast.makeText(CinemaListActivity.this, id, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(CinemaListActivity.this, id, Toast.LENGTH_SHORT).show();
 
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()

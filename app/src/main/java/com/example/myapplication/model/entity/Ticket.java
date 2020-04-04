@@ -5,6 +5,8 @@ import java.util.Date;
 public class Ticket {
     private Integer id;
     private Date create_time;
+    private String type;
+    private float price;
 
     private User user;
 
@@ -14,9 +16,12 @@ public class Ticket {
     public Ticket(){
 
     }
-    public Ticket(Integer id, Date create_time, User user, Seat seat, Screening screening) {
+
+    public Ticket(Integer id, Date create_time, String type, float price, User user, Seat seat, Screening screening) {
         this.id = id;
         this.create_time = create_time;
+        this.type = type;
+        this.price = price;
         this.user = user;
         this.seat = seat;
         this.screening = screening;
@@ -36,6 +41,22 @@ public class Ticket {
 
     public void setCreate_time(Date create_time) {
         this.create_time = create_time;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
 
     public User getUser() {

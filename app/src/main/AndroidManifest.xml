@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SeatInfoActivity"></activity>
+        <activity android:name=".PayActivity"></activity>
+        <activity android:name=".model.PayActivity" />
+        <activity android:name=".SeatInfoActivity" />
         <activity android:name=".ScreeningListActivity" />
         <activity android:name=".CinemaListActivity" />
         <activity android:name=".FilmListActivity" />
