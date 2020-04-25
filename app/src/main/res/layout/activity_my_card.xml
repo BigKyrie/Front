@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".MyCardActivity">
+
+    <TextView
+        android:id="@+id/CinemaName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:text="Please enter card number and password" />
+
+    <EditText
+        android:id="@+id/et_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Card Numbers"
+        android:background="@drawable/bg_username"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:drawablePadding="5dp"
+        android:layout_marginTop="70dp"/>
+
+    <EditText
+        android:id="@+id/et_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_1"
+        android:layout_marginTop="15dp"
+        android:hint="Password"
+        android:background="@drawable/bg_username"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:drawablePadding="5dp"
+    />
+
+    <EditText
+        android:id="@+id/et_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_2"
+        android:layout_marginTop="15dp"
+        android:hint="Please enter password again"
+        android:background="@drawable/bg_username"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:drawablePadding="5dp"
+        />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_3"
+        android:layout_marginTop="40dp"
+        android:text="bind bank card"
+        android:textSize="20sp"
+        android:textColor="#FFF"
+        android:background="@drawable/bg_btn4"/>
+
+</RelativeLayout>

@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PayActivity">
+    <TextView
+        android:id="@+id/iv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please select the payment way"
+        android:textSize="28sp"
+        android:textColor="#B22222"
+        android:layout_marginTop="80dp"
+        android:gravity="center"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/rb_1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/buyticket"
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="Offline cash payment" />
+    <Button
+        android:id="@+id/rb_2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/buyticket"
+        android:layout_marginTop="280dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="Bank card online payment" />
+
+<!--    <RadioGroup-->
+<!--        android:id="@+id/rg_1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_marginTop="200dp"-->
+<!--        android:layout_marginLeft="40dp">-->
+<!--        <RadioButton-->
+<!--            android:id="@+id/rb_1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Offline cash payment"-->
+<!--            android:checked="true"-->
+<!--            android:textSize="25sp"-->
+<!--            android:textColor="#FF6600"/>-->
+<!--        <RadioButton-->
+<!--            android:id="@+id/rb_2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Bank card online payment"-->
+<!--            android:textSize="25sp"-->
+<!--            android:textColor="#FF6600"/>-->
+<!--        </RadioGroup>-->
+<!--    <Button-->
+<!--        android:id="@+id/post"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="168dp"-->
+<!--        android:layout_marginTop="524dp"-->
+<!--        android:text="Post"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+</RelativeLayout>

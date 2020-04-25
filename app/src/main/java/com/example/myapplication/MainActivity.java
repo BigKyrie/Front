@@ -58,6 +58,30 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        Button ticket = findViewById(R.id.my_ticket);
+        ticket.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MyTicketActivity.class);
+                startActivity(intent);
+
+            }
+
+
+        });
+
+        Button card = findViewById(R.id.my_card);
+        card.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MyCardActivity.class);
+                startActivity(intent);
+
+            }
+
+
+        });
+
         Button login = findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
 

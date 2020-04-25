@@ -4,20 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:padding="15dp">
 
-    <ImageView
-        android:id="@+id/iv_grid"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:scaleType="centerCrop"
-        android:background="#F5F5F5"/>
     <TextView
         android:id="@+id/iv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Seat"
+        android:text="100￥"
+        android:textSize="25sp"
         android:textColor="#B22222"
         android:layout_marginTop="1dp"
         android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_pay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PAY"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"/>
+
 </LinearLayout>

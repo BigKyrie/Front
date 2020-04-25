@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="15dp">
+    <TextView
+        android:id="@+id/CinemaName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:text="CinemaName" />
+    <TextView
+        android:id="@+id/screen_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CinemaName"
+        android:textSize="16sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="#363636"
+        android:text="Screen No."/>
+    <RelativeLayout
+        android:id="@+id/details"
+        android:layout_width="290dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/screen_no"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#363636"
+            android:textSize="16sp"
+            android:text="line:"/>
+        <TextView
+            android:id="@+id/row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/line"
+            android:textColor="#363636"
+            android:layout_marginLeft="50sp"
+            android:textSize="16sp"
+            android:text="row:"/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/row"
+            android:textColor="#363636"
+            android:layout_marginLeft="50sp"
+            android:textSize="16sp"
+            android:text="price:"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/SelectTime"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/details"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/buyticket"
+        android:text="Ticket qr code" />
+
+
+</RelativeLayout>
