@@ -17,6 +17,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
+
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -63,31 +65,37 @@ public class PayActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view)
                     {
-                        OkHttpClient okHttpClient = new OkHttpClient();
+                        if (MainActivity.flag == 0){
+                            Toast.makeText(PayActivity.this, "please login first", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            OkHttpClient okHttpClient = new OkHttpClient();
 
-                        FormBody formBody = new FormBody.Builder().add("type", Type).build();
+                            FormBody formBody = new FormBody.Builder().add("type", Type).build();
 
-                        Request request = new Request.Builder()
-                                .url(Constant.BOOK+Screening_id+"/"+Seat_id)
-                                .post(formBody)
-                                .build();
-                        Call call = okHttpClient.newCall(request);
-                        call.enqueue(new Callback() {
+                            Request request = new Request.Builder()
+                                    .url(Constant.BOOK+Screening_id+"/"+Seat_id)
+                                    .post(formBody)
+                                    .build();
+                            Call call = okHttpClient.newCall(request);
+                            call.enqueue(new Callback() {
 
-                            @Override
-                            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                                Looper.prepare();
-                                Toast.makeText(PayActivity.this, "success?", Toast.LENGTH_SHORT).show();
-                                Looper.loop();
-                            }
+                                @Override
+                                public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                                    Looper.prepare();
+                                    Toast.makeText(PayActivity.this, "success?", Toast.LENGTH_SHORT).show();
+                                    Looper.loop();
+                                }
 
-                            @Override
-                            public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                                Looper.prepare();
-                                Toast.makeText(PayActivity.this, "Server not responding", Toast.LENGTH_SHORT).show();
-                                Looper.loop();
-                            }
-                        });
+                                @Override
+                                public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                                    Looper.prepare();
+                                    Toast.makeText(PayActivity.this, "Server not responding", Toast.LENGTH_SHORT).show();
+                                    Looper.loop();
+                                }
+                            });
+                        }
+
                     }
                 });
                 builder5.setTitle("Please pay cash at the counter:").setView(payview1).show();

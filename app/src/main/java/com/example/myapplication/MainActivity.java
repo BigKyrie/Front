@@ -28,6 +28,8 @@ import okhttp3.Response;
 
 
 public class MainActivity extends AppCompatActivity {
+    public static Integer flag = 0;
+    public static Integer user_id = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +64,13 @@ public class MainActivity extends AppCompatActivity {
         ticket.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MyTicketActivity.class);
-                startActivity(intent);
-
+                if (MainActivity.flag == 0){
+                    Toast.makeText(MainActivity.this, "please login first", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, MyTicketActivity.class);
+                    startActivity(intent);
+                }
             }
 
 
@@ -74,9 +80,13 @@ public class MainActivity extends AppCompatActivity {
         card.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MyCardActivity.class);
-                startActivity(intent);
-
+                if (MainActivity.flag == 0){
+                    Toast.makeText(MainActivity.this, "please login first", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, MyCardActivity.class);
+                    startActivity(intent);
+                }
             }
 
 
@@ -106,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                        List<User> users = JSONArray.parseArray(response.body().string(), User.class);
+                        List<Cinema_Admin> users = JSONArray.parseArray(response.body().string(), Cinema_Admin.class);
                         Looper.prepare();
                         if (username.length() == 0 || password.length() == 0) {
                             Toast.makeText(MainActivity.this, "Username or password cannot be empty", Toast.LENGTH_SHORT).show();
@@ -115,7 +125,10 @@ public class MainActivity extends AppCompatActivity {
                             if (users.size() == 0) {
                                 Toast.makeText(MainActivity.this, "Username or password not correct", Toast.LENGTH_SHORT).show();
                             } else {
+                                flag = 1;
                                 Toast.makeText(MainActivity.this, "Login is successful", Toast.LENGTH_SHORT).show();
+                                user_id = users.get(0).getId();
+                                Toast.makeText(MainActivity.this, "user id "+users.get(0).getId(), Toast.LENGTH_SHORT).show();
                             }
                         }
                         Looper.loop();
