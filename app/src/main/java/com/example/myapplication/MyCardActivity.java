@@ -38,10 +38,11 @@ public class MyCardActivity extends AppCompatActivity {
                 String cardNumber = ((EditText) findViewById(R.id.et_1)).getText().toString();
                 String password= ((EditText) findViewById(R.id.et_2)).getText().toString();
                 String password2= ((EditText) findViewById(R.id.et_3)).getText().toString();
+                String user_id = MainActivity.user_id.toString();
 
                 if (password.equals(password2)) {
                     OkHttpClient okHttpClient = new OkHttpClient();
-                    FormBody formBody = new FormBody.Builder().add("card_number", cardNumber).add("password",password).build();
+                    FormBody formBody = new FormBody.Builder().add("card_number", cardNumber).add("password",password).add("user_id",user_id).build();
                     Request request = new Request.Builder()
                             .url(Constant.CARD)
                             .post(formBody)
