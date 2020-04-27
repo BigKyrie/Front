@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.LayoutInflater;
@@ -11,7 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSONArray;
 import com.example.myapplication.model.dao.Constant;
+import com.example.myapplication.model.entity.Movie;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -88,6 +91,13 @@ public class PayActivity extends AppCompatActivity {
                                     Toast.makeText(PayActivity.this, re, Toast.LENGTH_SHORT).show();
                                     if (Boolean.parseBoolean(re)) {
                                         Toast.makeText(PayActivity.this, "succeeded", Toast.LENGTH_SHORT).show();
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Intent intent = new Intent(PayActivity.this,FilmListActivity.class);
+                                                PayActivity.this.startActivity(intent);
+                                            }
+                                        });
                                     }
                                     else {
                                         Toast.makeText(PayActivity.this, "failed", Toast.LENGTH_SHORT).show();
@@ -149,6 +159,13 @@ public class PayActivity extends AppCompatActivity {
                                     Toast.makeText(PayActivity.this, re, Toast.LENGTH_SHORT).show();
                                     if (Boolean.parseBoolean(re)) {
                                         Toast.makeText(PayActivity.this, "succeeded", Toast.LENGTH_SHORT).show();
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Intent intent = new Intent(PayActivity.this,FilmListActivity.class);
+                                                PayActivity.this.startActivity(intent);
+                                            }
+                                        });
                                     }
                                     else {
                                         Toast.makeText(PayActivity.this, "failed", Toast.LENGTH_SHORT).show();
