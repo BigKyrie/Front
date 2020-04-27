@@ -12,14 +12,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.model.entity.Cinema;
+import com.example.myapplication.model.entity.Ticket;
 
 import java.util.List;
 
 public class MyTicketAdapter extends BaseAdapter {
+    private List<Ticket> mData;
+    private Context mContext;
+
+    public MyTicketAdapter(List<Ticket> mData, Context mContext) {
+        this.mData = mData;
+        this.mContext = mContext;
+    }
 
     @Override
     public int getCount() {
-        return 1;
+        return mData.size();
     }
 
     @Override
@@ -34,6 +42,21 @@ public class MyTicketAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        convertView = LayoutInflater.from(mContext).inflate(R.layout.ticket_item,parent,false);
+
+        TextView CinemaName = (TextView) convertView.findViewById(R.id.CinemaName);
+        TextView screen_no = (TextView) convertView.findViewById(R.id.screen_no);
+        TextView line = (TextView) convertView.findViewById(R.id.line);
+        TextView row = (TextView) convertView.findViewById(R.id.row);
+        TextView price = (TextView) convertView.findViewById(R.id.price);
+        Button qr = (Button) convertView.findViewById(R.id.qr);
+
+        CinemaName.setText(mData.get(position).getScreening().getMovie().getTitle());
+        screen_no.setText("Screen number: "+mData.get(position).getScreening().getScreen().getNum());
+        line.setText("row: "+mData.get(position).getSeat().getRow());
+        row.setText("column: "+mData.get(position).getSeat().getCol());
+        price.setText("price: "+mData.get(position).getPrice());
+
+        return convertView;
     }
 }

@@ -70,7 +70,9 @@ public class RegisterActivity extends AppCompatActivity {
 //                            else if (Integer.parseInt(response.body().string())==1) {
 //                                Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show();
 //                            }
-                        if (Boolean.parseBoolean(response.body().string())) {
+                        String re = response.body().string();
+                        Toast.makeText(RegisterActivity.this, re, Toast.LENGTH_SHORT).show();
+                        if (Boolean.parseBoolean(re)) {
                             Toast.makeText(RegisterActivity.this, "Register successfully", Toast.LENGTH_SHORT).show();
                         }
                         else if (username.length()>20 || username.length()==0 || password.length()>20 || password.length()==0) {
