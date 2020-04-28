@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/line"
             android:textColor="#363636"
-            android:layout_marginLeft="50sp"
+            android:layout_marginLeft="35sp"
             android:textSize="16sp"
             android:text="row:"/>
         <TextView
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/row"
             android:textColor="#363636"
-            android:layout_marginLeft="50sp"
+            android:layout_marginLeft="35sp"
             android:textSize="16sp"
             android:text="price:"/>
 
@@ -65,6 +65,8 @@
         android:layout_toRightOf="@id/details"
         android:layout_marginLeft="5dp"
         android:background="@drawable/buyticket"
+        android:textSize="15sp"
+        android:textColor="#FFF"
         android:text="Ticket qr code" />
 
 

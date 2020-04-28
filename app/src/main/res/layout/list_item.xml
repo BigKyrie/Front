@@ -54,6 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/message"
         android:background="@drawable/buyticket"
+        android:textSize="15sp"
+        android:textColor="#FFF"
         android:width="60dp"
         android:height="30dp"
         android:text="@string/Select_cinema" />

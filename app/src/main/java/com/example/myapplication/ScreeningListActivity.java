@@ -44,13 +44,13 @@ public class ScreeningListActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String Movie_id = bundle.getString("Movie_id");
         String Cinema_id = bundle.getString("Cinema_id");
-        Toast.makeText(ScreeningListActivity.this, Movie_id+" "+Cinema_id, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(ScreeningListActivity.this, Movie_id+" "+Cinema_id, Toast.LENGTH_SHORT).show();
 
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(Constant.GETALLSCREENING+Movie_id+"/"+Cinema_id)
                 .build();
-        Toast.makeText(ScreeningListActivity.this, Constant.GETALLSCREENING+Movie_id+"/"+Cinema_id, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(ScreeningListActivity.this, Constant.GETALLSCREENING+Movie_id+"/"+Cinema_id, Toast.LENGTH_SHORT).show();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
 

@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                                 flag = 1;
                                 Toast.makeText(MainActivity.this, "Login is successful", Toast.LENGTH_SHORT).show();
                                 user_id = users.get(0).getId();
-                                Toast.makeText(MainActivity.this, "user id "+users.get(0).getId(), Toast.LENGTH_SHORT).show();
+ //                               Toast.makeText(MainActivity.this, "user id "+users.get(0).getId(), Toast.LENGTH_SHORT).show();
                             }
                         }
                         Looper.loop();

@@ -1,8 +1,8 @@
 package com.example.myapplication;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 
 import com.example.myapplication.model.entity.Cinema;
 import com.example.myapplication.model.entity.Ticket;
@@ -42,6 +43,7 @@ public class MyTicketAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         convertView = LayoutInflater.from(mContext).inflate(R.layout.ticket_item,parent,false);
 
         TextView CinemaName = (TextView) convertView.findViewById(R.id.CinemaName);
@@ -57,6 +59,16 @@ public class MyTicketAdapter extends BaseAdapter {
         row.setText("column: "+mData.get(position).getSeat().getCol());
         price.setText("price: "+mData.get(position).getPrice());
 
+        qr.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(mContext,qccode.class);
+                mContext.startActivity(intent);
+            }
+        });
         return convertView;
     }
 }

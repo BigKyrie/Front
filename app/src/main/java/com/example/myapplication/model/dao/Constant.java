@@ -13,6 +13,7 @@ public class Constant {
     public final static String CASHPAY = "http://10.0.2.2:8080/card/cashPay/";
     public final static String CARD = "http://10.0.2.2:8080/card/bindCard";
     public final static String MYTICKETS = "http://10.0.2.2:8080/demo/my_ticket";
+    public final static String SEARCH = "http://10.0.2.2:8080/movies/searchByKeywordForApp";
     public final static String GETALL = BASE_URL+"getAll";
     public final static String DELETE = BASE_URL+"delete";
     public final static String MODIFY = BASE_URL+"modify";

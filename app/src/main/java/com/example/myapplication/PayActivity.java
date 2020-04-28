@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONArray;
@@ -43,6 +44,7 @@ public class PayActivity extends AppCompatActivity {
         int Screening_id = bundle.getInt("Screening_id");
         int Seat_id = bundle.getInt("Seat_id");
         int Type_id = bundle.getInt("Type");
+
         String user_id = MainActivity.user_id.toString();
         String Type;
         if (Type_id == 0) {
@@ -94,7 +96,7 @@ public class PayActivity extends AppCompatActivity {
                                         runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
-                                                Intent intent = new Intent(PayActivity.this,FilmListActivity.class);
+                                                Intent intent = new Intent(PayActivity.this,MainActivity.class);
                                                 PayActivity.this.startActivity(intent);
                                             }
                                         });
@@ -129,7 +131,6 @@ public class PayActivity extends AppCompatActivity {
                 AlertDialog.Builder builder6 = new AlertDialog.Builder(PayActivity.this);
                 View payview2 = LayoutInflater.from(PayActivity.this).inflate(R.layout.pay_dialog1, null);
                 EditText Password = payview2.findViewById(R.id.et_password);
-
                 Button btnpass2 = payview2.findViewById(R.id.btn_pay1);
                 btnpass2.setOnClickListener(new View.OnClickListener()
                 {
@@ -162,7 +163,7 @@ public class PayActivity extends AppCompatActivity {
                                         runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
-                                                Intent intent = new Intent(PayActivity.this,FilmListActivity.class);
+                                                Intent intent = new Intent(PayActivity.this,MainActivity.class);
                                                 PayActivity.this.startActivity(intent);
                                             }
                                         });

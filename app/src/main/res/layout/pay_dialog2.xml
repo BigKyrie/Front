@@ -6,15 +6,7 @@
     android:orientation="vertical"
     android:padding="15dp">
 
-    <TextView
-        android:id="@+id/iv_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="100￥"
-        android:textSize="25sp"
-        android:textColor="#B22222"
-        android:layout_marginTop="1dp"
-        android:gravity="center"/>
+
 
     <Button
         android:id="@+id/btn_pay2"

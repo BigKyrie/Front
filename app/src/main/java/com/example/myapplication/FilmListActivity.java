@@ -11,6 +11,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -37,6 +39,8 @@ public class FilmListActivity extends AppCompatActivity {
     private Context mContext;
     private FilmAdapter mAdapter = null;
     private ListView listview;
+    private Button search;
+    private EditText searchInfo;
 
 
     @Override
@@ -45,6 +49,8 @@ public class FilmListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_film_list);
         mContext = FilmListActivity.this;
         listview = findViewById(R.id.listview);
+        search = findViewById(R.id.search);
+        searchInfo = findViewById(R.id.et_1);
 
 
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -77,6 +83,48 @@ public class FilmListActivity extends AppCompatActivity {
             }
         });
 
+        // search
+        search.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                String keyword = searchInfo.getText().toString();
+                FormBody formBody = new FormBody.Builder().add("keyword", keyword).build();
+                Request request1 = new Request.Builder()
+                        .url(Constant.SEARCH)
+                        .post(formBody)
+                        .build();
+                Call call1 = okHttpClient.newCall(request1);
+                call1.enqueue(new Callback() {
+
+                    @Override
+                    public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                        final String data = response.body().string();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mData = JSONArray.parseArray(data, Movie.class);
+                                mAdapter = new FilmAdapter(mData, mContext);
+                                listview.setAdapter(mAdapter);
+                                mAdapter.notifyDataSetChanged();
+
+//                        Toast.makeText(FilmListActivity.this, "Lead actor: "+mData.get(0).getUrl(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                        Looper.prepare();
+                        Toast.makeText(FilmListActivity.this, "Server not responding", Toast.LENGTH_SHORT).show();
+                        Looper.loop();
+                    }
+                });
+            }
+        });
 
     }
 }

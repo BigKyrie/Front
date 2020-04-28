@@ -55,6 +55,8 @@
         android:background="@drawable/buyticket"
         android:width="60dp"
         android:height="30dp"
+        android:textSize="15sp"
+        android:textColor="#FFF"
         android:text="@string/select_time" />
 
 

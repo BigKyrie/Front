@@ -50,6 +50,8 @@
         android:background="@drawable/buyticket"
         android:width="60dp"
         android:height="30dp"
+        android:textSize="15sp"
+        android:textColor="#FFF"
         android:layout_marginTop="17dp"
         android:text="@string/buy_ticket" />
 

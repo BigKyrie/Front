@@ -61,7 +61,7 @@ public class CinemaListActivity extends AppCompatActivity {
                         mData = JSONArray.parseArray(data, Cinema.class);
                         if(mData.size() == 0)
                         {
-                            Toast.makeText(CinemaListActivity.this,"0",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(CinemaListActivity.this,"0",Toast.LENGTH_SHORT).show();
                         }else {
                             mAdapter = new CinemaAdapter(mData, mContext, id);
                             Cinema.setAdapter(mAdapter);
